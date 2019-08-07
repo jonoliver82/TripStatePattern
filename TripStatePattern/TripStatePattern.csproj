@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.2\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,11 +47,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\TripFactory.cs" />
+    <Compile Include="Factories\UnitTripServiceFactory.cs" />
+    <Compile Include="Interfaces\IEventRepository.cs" />
+    <Compile Include="Interfaces\ITripFactory.cs" />
+    <Compile Include="Interfaces\ITripProcessor.cs" />
+    <Compile Include="Interfaces\IUnitTripService.cs" />
+    <Compile Include="Interfaces\IUnitTripServiceFactory.cs" />
+    <Compile Include="Models\EventDTO.cs" />
+    <Compile Include="Models\IgnitionEvent.cs" />
+    <Compile Include="Models\TripModel.cs" />
+    <Compile Include="Models\TripState.cs" />
+    <Compile Include="Processors\DistanceTripProcessor.cs" />
+    <Compile Include="Processors\DriverTagTripProcessor.cs" />
+    <Compile Include="Processors\IdleTimeTripProcessor.cs" />
+    <Compile Include="Processors\SpeedLimitTripProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\SampleEventRepository.cs" />
+    <Compile Include="Services\UnitTripService.cs" />
+    <Compile Include="States\TripStateBase.cs" />
+    <Compile Include="States\TripStateFinished.cs" />
+    <Compile Include="States\TripStateStarted.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

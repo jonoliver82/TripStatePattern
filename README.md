@@ -1,0 +1,1 @@
+C# Sample of using the State and Visitor Patterns to populate metadata about an event by visiting event processors.
